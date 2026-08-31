@@ -14,9 +14,8 @@
             <span class="team-brand">10606A Tenth Gear</span>
             <nav class="main-nav">
                 <a href="#about">About</a>
-                <a href="#team">Roster</a>
+                <a href="#team">Meet Our Team</a>
                 <a href="#events">Events</a>
-                <a href="#outreach">Outreach</a>
                 <a href="#reveal">Reveal</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -27,8 +26,8 @@
     <section class="intro-block" id="about">
         <h1>10606A Tenth Gear</h1>
         
-        <!-- EDIT HERE: MAIN TAGLINE / SUBTITLE TEXT -->
-        <p class="tagline">[insert later]</p>
+        <!-- COMPETITIVE SEASON IDENTIFIER TEXT -->
+        <p class="tagline" style="margin-bottom: 40px; font-weight: 700; color: #0f172a;">Private Organization</p>
         
         <div class="yt-notice">
             <span>Watch our match footage on YouTube:</span>
@@ -63,10 +62,10 @@
             </div>
         </article>
 
-        <!-- Narrative Section: Team Roster -->
+        <!-- Narrative Section: Meet Our Team -->
         <article class="content-row reverse" id="team">
             <div class="row-text">
-                <h2>The Roster</h2>
+                <h2>Meet Our Team</h2>
                 
                 <!-- EDIT HERE: TEAM MEMBER INTRO TEXT -->
                 <p>[insert later]</p>
@@ -124,17 +123,6 @@
             </div>
         </section>
 
-        <!-- Narrative Section: Outreach -->
-        <article class="content-row" id="outreach">
-            <div class="row-text">
-                <h2>Community & STEM Outreach</h2>
-                
-                <!-- EDIT HERE: COMMUNITY WORKSHOPS AND EVENTS TEXT -->
-                <p>[insert later]</p>
-                
-            </div>
-        </article>
-
         <!-- Narrative Section: Robot Reveal -->
         <article class="content-row" id="reveal">
             <div class="row-text">
@@ -157,30 +145,41 @@
             <!-- EDIT HERE: CONTACT FORM SUBTITLE INSTRUCTIONS -->
             <p class="contact-sub">[insert later]</p>
             
-            <form class="simple-form" onsubmit="event.preventDefault(); alert('Message noted!');">
+            <!-- Web3Forms Routing Setup -->
+            <form class="simple-form" action="https://web3forms.com" method="POST">
+                
+                <!-- 👇 PASTE YOUR ACCESS KEY RIGHT INSIDE THESE QUOTES BELOW 👇 -->
+                <input type="hidden" name="access_key" value="PASTE_YOUR_ACCESS_KEY_HERE">
+
                 <div class="input-row">
                     <div class="input-wrap">
                         <label>First Name*</label>
-                        <input type="text" required>
+                        <input type="text" name="first_name" required>
                     </div>
                     <div class="input-wrap">
                         <label>Last Name*</label>
-                        <input type="text" required>
+                        <input type="text" name="last_name" required>
                     </div>
                 </div>
                 <div class="input-wrap">
                     <label>Email Address*</label>
-                    <input type="email" required>
+                    <input type="email" name="email" required>
                 </div>
                 <div class="input-wrap">
                     <label>Your Message*</label>
-                    <textarea rows="6" required></textarea>
+                    <textarea rows="6" name="message" required></textarea>
                 </div>
+                
+                <!-- Automatically routes to a clean thank-you confirmation screen upon click -->
+                <input type="hidden" name="redirect" value="https://web3forms.com">
+
                 <button type="submit" class="action-btn">Send Message</button>
             </form>
         </section>
 
     </main>
 
+    <!-- Connecting the Javascript file -->
+    <script src="script.js"></script>
 </body>
 </html>
